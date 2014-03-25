@@ -38,16 +38,6 @@ class Worker implements Runnable {
 
 	@Override
 	public void run() {
-		// DataInputStream dis = new DataInputStream(s.getInputStream());
-		// byte[] b = new byte[1024];
-		// StringBuilder sb = new StringBuilder();
-		// s.setSoTimeout(10);
-		// int len = -1;
-		// while ((len = dis.read(b)) != -1) {
-		// sb.append(new String(b));
-		// // for (byte bByte : b)
-		// // System.out.println(bByte);
-		// }
 		try {
 			new SocketProcessor(s).process();
 		} catch (Throwable e) {
@@ -59,6 +49,5 @@ class Worker implements Runnable {
 				e.printStackTrace();
 			}
 		}
-
 	}
 }
