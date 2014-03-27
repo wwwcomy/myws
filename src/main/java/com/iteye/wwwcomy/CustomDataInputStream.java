@@ -27,7 +27,7 @@ public class CustomDataInputStream extends DataInputStream {
 		}
 		return new String(buffer.toByteArray(), "UTF-8");
 	}
-	
+
 	public String readHttpRequestHeaderLine() throws IOException {
 		byte[] buf = new byte[8192];
 		boolean stop = false;
@@ -39,6 +39,6 @@ public class CustomDataInputStream extends DataInputStream {
 				lastValid = iRead;
 			stop = true;
 		}
-		return new String(buf, "UTF-8");
+		return new String(buf, 0, lastValid, "UTF-8");
 	}
 }

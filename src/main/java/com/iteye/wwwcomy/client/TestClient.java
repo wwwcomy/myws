@@ -3,7 +3,6 @@ package com.iteye.wwwcomy.client;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
@@ -24,8 +23,7 @@ public class TestClient {
 		socket.connect(address);
 	}
 
-	public static void genHttp() throws Throwable {
-		Socket socket = null;
+	public static void genHttp(Socket socket) throws Throwable {
 		String url = null;
 		String host = null;
 		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream(), "UTF8"));
